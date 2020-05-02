@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: auto auto auto;
+}
+
+.main-title {
+
+  color: #fff;
+  background-color: black;
+  font-size: 30px;
+}
+
+.Comment-form {
+  display: flex;
+  flex-direction: column;
+ }
+
+.comment-list {
+  min-height: 400px;
+}
+
+.input-name {
+  margin-bottom: 10px;
+}
+
+.input-name-form {
+  width: 200px;
+}
+
+.input-text {
+  display: flex;
+}
+
+.input-text textarea {
+  width: 500px;
+  min-height: 100px;
+  resize: none;
+}
+
+.btn {
+  margin-left: 15px;
+}
+
+/*Comment */
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  background-color: rgba(0,0,0, .2);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 15px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: Bold;
+  margin: 10px 15px;
+}
+
+.comment-date {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.comment-text {
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+.delete-button {
+  align-self: flex-end;
+  margin-right: 10px;
+}
