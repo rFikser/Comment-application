@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import AppContainer from "./containers/App-container";
+import {createStore} from "redux";
+import comments from "./reducers/comments-reducer";
+import {saveToLocalStorage, loadToLocalStorage} from "./actions/actions";
+
+
+const persistedState = loadToLocalStorage()
+
+const store = createStore(comments,persistedState)
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
+window.store = store;
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App date = {new Date()}/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <AppContainer date={new Date()} store={store}/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
